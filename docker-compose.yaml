@@ -2,13 +2,12 @@ version: '2'
 
 services:
   rancher:
-    image: rancher/rancher:latest
+    image: rancher/server:stable
     restart: always
     ports:
-    - "80:80/tcp"
-    - "443:443/tcp"
+    - "80:8080/tcp"
     volumes:
-    - "rancher-data:/var/lib/rancher"
+    - "rancher-data:/var/lib"
     privileged: true
 
 volumes:
